@@ -14,3 +14,17 @@ node_modules/
 
 inbox/*
 !inbox/README.md
+
+# Local secrets and generated artifacts
+.env*
+*.pem
+*.key
+*.pfx
+*.p12
+Cookies
+cookies.json
+.next/
+.astro/
+*.tmp
+dist/
+build/

@@ -185,7 +185,7 @@ def main():
         if not args.check:
             meta_path.write_text(json.dumps({'source_repository': f"{data['owner']}/AIfile", 'source_commit': sha}, indent=2) + '\n', encoding='utf-8')
     else:
-        for english, name in ((False, 'README.md'), (True, 'README.en.md')):
+        for english, name in ((False, 'README.zh.md'), (True, 'README.md')):
             update(ROOT / name, render(data, english), args.check)
         for name, prefix, code in [('catalog/inventory.md', '../', False), ('showcases/README.md', '../', False), ('shelves/code/README.md', '../../', True)]:
             update(ROOT / name, inventory(data, prefix, code), args.check)

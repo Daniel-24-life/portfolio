@@ -20,5 +20,8 @@
 | AIGC 视频生产流程 | 研究与内容流程 | 公开流程与重建样例 | [查看](../showcases/aigc-video-production-pipeline/) |
 | AI 技能路由方法 | 方法与学习系统 | 公开方法包 | [查看](../shelves/skills/ai-skill-routing-playbook/) |
 | AI 工作流学习系统 | 方法与学习系统 | 公开方法与手册 | [查看](../shelves/understanding/ai-workflow-learning-system/) |
+| 制作流程图谱 | 业务产品与工作台 | 合成 Web 演示 | [查看](https://github.com/Daniel-24-life/production-workflow-mindmap) |
+| 球队阵容优化 | 研究与内容流程 | 合成建模案例 | [查看](https://github.com/Daniel-24-life/sports-franchise-optimization) |
+| 渔获动力学模型 | 研究与内容流程 | 课程模型与复现 | [查看](https://github.com/Daniel-24-life/fishery-dynamics-model) |
 
 <!-- portfolio:end -->

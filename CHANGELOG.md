@@ -1,5 +1,11 @@
 # Release history
 
+## English-first portfolio update - 2026-11-22
+
+- Made the English directory the default README and retained a separate Chinese index.
+- Registered the public production workflow, roster optimization, and fishery dynamics cases.
+- Kept the directory version at v3.2.
+
 ## English presentation update - 2026-10-26
 
 - Added English-only profile and portfolio banners and five system-overview illustrations.

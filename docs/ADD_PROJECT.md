@@ -40,19 +40,9 @@ python scripts/render_portfolio.py --check
 python scripts/verify_public_packages.py
 ```
 
-生成器只更新 README.md 与 README.en.md 的 portfolio 标记区。个人主页仓库同样
-使用该标记；更新时指定本地路径和已提交的 AIfile 来源 SHA：
-
-```powershell
-python scripts/render_portfolio.py --profile-dir ../Daniel-24-life --source-commit FULL_COMMIT_SHA
-```
-
-来源写入个人主页的 catalog-source.json。主页 CI 获取该固定提交核对生成内容。
-两仓库分别审阅、提交和发布；新增项目工具本身不会替你上传。
-
-英文资产生成与检查可附加 `--profile-dir` 同步主页明暗封面。顶部语言切换属于手写区，
-放在封面之前；英文页回到中文个人主页，中文页链接到英文 README。GitHub 原生 README
-使用链接切换独立文档，不依赖 JavaScript 或第三方服务。
+生成器更新英文默认入口 README.md 与中文 README.zh.md 的 portfolio 标记区。
+README.en.md 保留为兼容英文入口。个人主页的六项精选由主页仓单独维护，完整目录以本仓登记表为准。
+旧版主页快照仍可使用匹配的生成器和固定来源提交校验。
 
 ## 发布检查
 
