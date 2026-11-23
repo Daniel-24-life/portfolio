@@ -56,7 +56,21 @@
         "note": "新增消费者服务工作台、AI Coding 说明与合成参考演示。",
         "note_en": "Consumer-service workspace, AI Coding notes and synthetic reference demo."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 2,
+        "category": "workflow",
+        "kind": "recording",
+        "title_en": "CosmoPilot V4.0",
+        "title": "CosmoPilot 消费者服务台",
+        "summary_en": "Review evidence at a conversation cutoff and preserve manual changes to the proposed reply.",
+        "summary": "按会话时点核对证据，保留人工对回复草稿的修改。",
+        "alt_en": "Conversation evidence and draft review in the service workbench",
+        "alt": "客服工作台中的会话证据和草稿复核",
+        "demo": "https://github.com/Daniel-24-life/cosmopilot-v4#demo",
+        "tests": 25,
+        "ci": "https://github.com/Daniel-24-life/cosmopilot-v4/actions/runs/45106872525"
+      }
     },
     {
       "id": "logistics-workbench",
@@ -82,7 +96,21 @@
         "note": "异常队列与审核工作台重设计。",
         "note_en": "Queue-first review workbench redesign."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 4,
+        "category": "web",
+        "kind": "live",
+        "title_en": "Logistics Workbench",
+        "title": "航序物流协同工作台",
+        "summary_en": "Review a shipment exception, hand it to dispatch, and follow the task status.",
+        "summary": "复岸运输异常、确认派单，并跟进调度任务状态。",
+        "alt_en": "Shipment exception queue and dispatch controls",
+        "alt": "物流异常队列与调度操作",
+        "demo": "https://daniel-24-life.github.io/logistics-workbench/",
+        "tests": 5,
+        "ci": "https://github.com/Daniel-24-life/logistics-workbench/actions/runs/45116944736"
+      }
     },
     {
       "id": "buyer-research-agent",
@@ -108,7 +136,21 @@
         "note": "证据优先工作台与连接状态改进。",
         "note_en": "Evidence-first workspace and explicit connection states."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 3,
+        "category": "workflow",
+        "kind": "recording",
+        "title_en": "Buyer Research Agent",
+        "title": "买家研究工作台",
+        "summary_en": "Separate buyer demand from tentative leads and take evidence gaps into a review queue.",
+        "summary": "区分采购需求与待核线索，把缺少的证据写入审核队列。",
+        "alt_en": "Buyer evidence and demand review in the research workbench",
+        "alt": "买家研究工作台中的证据和需求复核",
+        "demo": "https://github.com/Daniel-24-life/buyer-research-agent#demo",
+        "tests": 19,
+        "ci": "https://github.com/Daniel-24-life/buyer-research-agent/actions/runs/45106872187"
+      }
     },
     {
       "id": "trade-desk-copilot",
@@ -134,7 +176,21 @@
         "note": "全新开源发布：双模离线仿真、交互式 DST 状态机与宿主格式清洗。",
         "note_en": "Initial open-source release: dual-mode offline simulation, interactive DST state machine, and host-aware formatting."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 1,
+        "category": "workflow",
+        "kind": "recording",
+        "title_en": "Trade Desk Copilot",
+        "title": "外贸询盘工作台",
+        "summary_en": "Correct buyer requirements and review a catalog-backed quotation before sharing it.",
+        "summary": "修改询盘需求，在分享前复核与商品目录对应的报价。",
+        "alt_en": "Quote review with catalog SKU and requested quantity",
+        "alt": "显示目录 SKU 与客户数量的报价复核界面",
+        "demo": "https://github.com/Daniel-24-life/trade-desk-copilot#demo",
+        "tests": 22,
+        "ci": "https://github.com/Daniel-24-life/trade-desk-copilot/actions/runs/45116388268"
+      }
     },
     {
       "id": "btc-agent-governance",
@@ -160,7 +216,21 @@
         "note": "新增四场景本地记录查看器。",
         "note_en": "Local viewer for four recorded governance scenarios."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 5,
+        "category": "workflow",
+        "kind": "live",
+        "title_en": "BTC Agent Governance",
+        "title": "BTC 研究 Agent 治理",
+        "summary_en": "Inspect how a research request is routed and which evidence keeps it behind a review gate.",
+        "summary": "查看研究请求如何路由，以及审核前需要补全哪些证据。",
+        "alt_en": "Research request, evidence and governance statuses",
+        "alt": "研究请求、证据和审核状态",
+        "demo": "https://daniel-24-life.github.io/btc-agent-governance/",
+        "tests": 28,
+        "ci": "https://github.com/Daniel-24-life/btc-agent-governance/actions/runs/45106878342"
+      }
     },
     {
       "id": "agentplatform-case-study",
@@ -188,7 +258,21 @@
         "note": "新增只读复盘页，保留停止结论。",
         "note_en": "Read-only case page; discontinued conclusion preserved."
       },
-      "runnable": false
+      "runnable": false,
+      "gallery": {
+        "order": 6,
+        "category": "workflow",
+        "kind": "case",
+        "title_en": "AgentPlatform Case Study",
+        "title": "AgentPlatform 工程复盘",
+        "summary_en": "Trace a bounded agent task through its isolated workspace, evidence, and review gate.",
+        "summary": "沿着隔离工作区、执行证据和验收节点复盘一个限定的 Agent 任务。",
+        "alt_en": "AgentPlatform interface populated with a public fixture",
+        "alt": "使用公开夹具的 AgentPlatform 界面",
+        "demo": "https://daniel-24-life.github.io/agentplatform-case-study/",
+        "tests": 4,
+        "ci": "https://github.com/Daniel-24-life/agentplatform-case-study/actions/runs/45106880071"
+      }
     },
     {
       "id": "creator-discovery-pipeline",
@@ -271,7 +355,21 @@
         "note": "独立科研开源：144 条件合成基准、吸收边界 PDE 求解器与 116 项物理单元测试。",
         "note_en": "Initial research release: 144-condition benchmark, absorbing boundary PDE solvers, and 116 tests."
       },
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 8,
+        "category": "model",
+        "kind": "chart",
+        "title_en": "Localization Integrity Lab",
+        "title": "移动机器人定位完整性研究",
+        "summary_en": "Compare local observability and positioning behavior under specified motion and noise models.",
+        "summary": "比较给定运动与噪声模型下的局部可观测性和定位表现。",
+        "alt_en": "Measured observability ranks for four modeled scenarios",
+        "alt": "四种建模观测情景的实测可观测性秩",
+        "demo": "https://github.com/Daniel-24-life/localization-integrity-lab#demo",
+        "tests": 116,
+        "ci": "https://github.com/Daniel-24-life/localization-integrity-lab/actions/runs/45106879426"
+      }
     },
     {
       "id": "wti-market-research",
@@ -367,7 +465,21 @@
       "source": "https://github.com/Daniel-24-life/production-workflow-mindmap/blob/main/index.html",
       "verification": "https://github.com/Daniel-24-life/production-workflow-mindmap/blob/main/README.md",
       "release": null,
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 7,
+        "category": "web",
+        "kind": "live",
+        "title_en": "Production Workflow Mindmap",
+        "title": "制作流程图谱",
+        "summary_en": "Open each short-film production stage to see its inputs, review step, and handoff.",
+        "summary": "展开短片制作阶段，查看输入、审核时点和交接物。",
+        "alt_en": "Production workflow with inputs and handoffs",
+        "alt": "列出输入和交接物的制作流程图",
+        "demo": "https://daniel-24-life.github.io/production-workflow-mindmap/",
+        "tests": 2,
+        "ci": "https://github.com/Daniel-24-life/production-workflow-mindmap/actions/runs/45106879011"
+      }
     },
     {
       "id": "sports-franchise-optimization",
@@ -387,7 +499,21 @@
       "source": "https://github.com/Daniel-24-life/sports-franchise-optimization/blob/main/optimizer.py",
       "verification": "https://github.com/Daniel-24-life/sports-franchise-optimization/blob/main/test_optimizer.py",
       "release": null,
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 9,
+        "category": "model",
+        "kind": "chart",
+        "title_en": "Sports Franchise Optimization",
+        "title": "球队阵容优化",
+        "summary_en": "Compare feasible rosters under budget, role coverage, and risk constraints.",
+        "summary": "在预算、位置覆盖和风险约束下比较可行阵容。",
+        "alt_en": "Budget, contribution and risk for feasible rosters",
+        "alt": "可行阵容的成本、贡献和风险",
+        "demo": "https://github.com/Daniel-24-life/sports-franchise-optimization#demo",
+        "tests": 3,
+        "ci": "https://github.com/Daniel-24-life/sports-franchise-optimization/actions/runs/45106919120"
+      }
     },
     {
       "id": "fishery-dynamics-model",
@@ -407,7 +533,21 @@
       "source": "https://github.com/Daniel-24-life/fishery-dynamics-model/blob/main/model.py",
       "verification": "https://github.com/Daniel-24-life/fishery-dynamics-model/blob/main/README.md",
       "release": null,
-      "runnable": true
+      "runnable": true,
+      "gallery": {
+        "order": 10,
+        "category": "model",
+        "kind": "chart",
+        "title_en": "Fishery Dynamics Model",
+        "title": "渔业动力学模型",
+        "summary_en": "Compare modeled population, yield, and profit under different harvest settings.",
+        "summary": "比较不同捕捞设置下的模型种群、产量和利润。",
+        "alt_en": "Modeled fish population, yield and profit across harvest scenarios",
+        "alt": "不同捕捞情景下的模型种群、产量和利润",
+        "demo": "https://github.com/Daniel-24-life/fishery-dynamics-model#demo",
+        "tests": 1,
+        "ci": "https://github.com/Daniel-24-life/fishery-dynamics-model/actions/runs/45106885858"
+      }
     }
   ]
 }
