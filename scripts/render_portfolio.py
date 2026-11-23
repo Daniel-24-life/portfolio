@@ -61,9 +61,9 @@ def link(value: str, remote: bool, owner: str, asset=False) -> str:
     if value.startswith('https://') or not remote:
         return value
     if asset:
-        return f'https://raw.githubusercontent.com/{owner}/AIfile/main/{quote(value, safe="/")}'
+        return f'https://raw.githubusercontent.com/{owner}/portfolio/main/{quote(value, safe="/")}'
     route = 'blob' if asset or '.' in value.rsplit('/', 1)[-1] else 'tree'
-    return f'https://github.com/{owner}/AIfile/{route}/main/{quote(value, safe="/")}'
+    return f'https://github.com/{owner}/portfolio/{route}/main/{quote(value, safe="/")}'
 
 
 def render(data: dict, english=False, profile=False, source_ref='main') -> str:
@@ -71,12 +71,13 @@ def render(data: dict, english=False, profile=False, source_ref='main') -> str:
     featured = sorted((p for p in published if p.get('featured_order') is not None), key=lambda p: p['featured_order'])
     title, summary, state = ('title_en', 'summary_en', 'state_en') if english else ('title', 'summary', 'state')
     owner = data['owner']
-    chunks = ['## Selected work' if english else '## 精选作品', '']
+    chunks = []
     if profile:
+        chunks += ['## Selected work' if english else '## 精选作品', '']
         for index, p in enumerate(featured):
             url = link(p.get('entry_en', p['entry']) if english else p['entry'], profile, owner)
             image = link(p['cover_en'] if english else p['cover'], profile, owner, asset=True)
-            image = image.replace('/AIfile/main/', f'/AIfile/{source_ref}/')
+            image = image.replace('/portfolio/main/', f'/portfolio/{source_ref}/')
             chunks += [f'### [{escape(p[title])}]({escape(url)})', '',
                        f'<a href="{escape(url)}"><img src="{escape(image)}" width="860" alt="{escape(p[title])}" /></a>', '',
                        escape(p[summary]), '',
@@ -87,23 +88,6 @@ def render(data: dict, english=False, profile=False, source_ref='main') -> str:
                        f'<a href="{escape(link(p["verification"], profile, owner))}">{"Verification (Chinese)" if english else "验证"}</a>', '']
             if index < len(featured) - 1:
                 chunks += ['---', '']
-    else:
-        chunks += ['<table>', '<tbody>']
-        for i in range(0, len(featured), 2):
-            chunks.append('<tr>')
-            for p in featured[i:i+2]:
-                url = link(p.get('entry_en', p['entry']) if english else p['entry'], profile, owner)
-                image = link(p['cover_en'] if english else p['cover'], profile, owner, asset=True)
-                chunks += ['<td width="50%" valign="top">',
-                           f'<h3><a href="{escape(url)}">{escape(p[title])}</a></h3>',
-                           f'<a href="{escape(url)}"><img src="{escape(image)}" width="420" alt="{escape(p[title])}" /></a>',
-                           f'<p>{escape(p[summary])}</p>', f'<p><strong>{escape(p[state])}</strong></p>',
-                           f'<p><a href="{escape(url)}">{"Run / overview" if english else "体验与运行"}</a> · '
-                           f'<a href="{escape(link(p["architecture"], profile, owner))}">{"Architecture (Chinese)" if english else "架构"}</a> · '
-                           f'<a href="{escape(link(p["source"], profile, owner))}">{escape(p.get("source_label_en", "Source")) if english else "源码"}</a> · '
-                           f'<a href="{escape(link(p["verification"], profile, owner))}">{"Verification (Chinese)" if english else "验证"}</a></p>', '</td>']
-            chunks.append('</tr>')
-        chunks += ['</tbody>', '</table>', '']
     if not profile:
         chunks += ['## Project directory' if english else '## 完整作品目录', '']
         for cat in data['categories']:
@@ -117,9 +101,9 @@ def render(data: dict, english=False, profile=False, source_ref='main') -> str:
             chunks.append('')
     else:
         chunks += ['## Read deeper' if english else '## 深入阅读', '',
-                   f"[{'All projects' if english else '全部项目与分类'}](https://github.com/{owner}/AIfile{'/blob/main/README.en.md' if english else ''}) · "
-                   f"[{'Code references' if english else '代码参考'}](https://github.com/{owner}/AIfile/tree/main/shelves/code) · "
-                   f"[{'Learning and methods' if english else '方法与学习'}](https://github.com/{owner}/AIfile/tree/main/shelves/understanding)", '']
+                   f"[{'All projects' if english else '全部项目与分类'}](https://github.com/{owner}/portfolio{'' if english else '/blob/main/README.zh.md'}) · "
+                   f"[{'Code references' if english else '代码参考'}](https://github.com/{owner}/portfolio/tree/main/shelves/code) · "
+                   f"[{'Learning and methods' if english else '方法与学习'}](https://github.com/{owner}/portfolio/tree/main/shelves/understanding)", '']
     chunks += ['## Recent releases' if english else '## 近期更新', '']
     releases = sorted((p for p in published if p.get('release')), key=lambda p: (p['release']['date'], -(p.get('featured_order') or 100)), reverse=True)[:3]
     for p in releases:
@@ -129,7 +113,7 @@ def render(data: dict, english=False, profile=False, source_ref='main') -> str:
         chunks.append(f"- {r['date']} · [{p[title]}]({link(entry, profile, owner)}) · {version} — {r['note_en'] if english else r['note']}")
     chunks += ['', '## Add the next project' if english else '## 添加下一项作品', '',
                f"[{'Publishing guide and templates (Chinese)' if english else '维护指南与项目模板'}](" +
-               (f'https://github.com/{owner}/AIfile/blob/main/docs/ADD_PROJECT.md' if profile else 'docs/ADD_PROJECT.md') + ')', '']
+               (f'https://github.com/{owner}/portfolio/blob/main/docs/ADD_PROJECT.md' if profile else 'docs/ADD_PROJECT.md') + ')', '']
     return '\n'.join(chunks).rstrip() + '\n'
 
 
@@ -174,7 +158,7 @@ def main():
         if args.check:
             meta = json.loads(meta_path.read_text(encoding='utf-8'))
             sha = args.source_commit or meta['source_commit']
-            if sha != meta['source_commit'] or meta['source_repository'] != f"{data['owner']}/AIfile":
+            if sha != meta['source_commit'] or meta['source_repository'] != f"{data['owner']}/portfolio":
                 raise ValueError('profile source pin mismatch')
         else:
             sha = args.source_commit
@@ -183,7 +167,7 @@ def main():
         for english, name in ((False, 'README.md'), (True, 'README.en.md')):
             update(args.profile_dir / name, render(data, english, True, sha), args.check)
         if not args.check:
-            meta_path.write_text(json.dumps({'source_repository': f"{data['owner']}/AIfile", 'source_commit': sha}, indent=2) + '\n', encoding='utf-8')
+            meta_path.write_text(json.dumps({'source_repository': f"{data['owner']}/portfolio", 'source_commit': sha}, indent=2) + '\n', encoding='utf-8')
     else:
         for english, name in ((False, 'README.zh.md'), (True, 'README.md')):
             update(ROOT / name, render(data, english), args.check)

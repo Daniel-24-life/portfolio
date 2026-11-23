@@ -89,8 +89,8 @@ class PortfolioTests(unittest.TestCase):
         data = renderer.load_registry(ROOT)
         sha = 'a' * 40
         rendered = renderer.render(data, profile=True, source_ref=sha)
-        self.assertIn(f'/AIfile/{sha}/assets/previews/', rendered)
-        self.assertNotIn('/AIfile/main/assets/previews/', rendered)
+        self.assertIn(f'/portfolio/{sha}/assets/previews/', rendered)
+        self.assertNotIn('/portfolio/main/assets/previews/', rendered)
 
     def test_profile_featured_work_reflows_without_table(self):
         data = renderer.load_registry(ROOT)

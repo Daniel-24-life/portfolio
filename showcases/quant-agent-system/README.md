@@ -5,4 +5,4 @@
 该项目的代码、运行说明、架构与验证现已在独立仓库维护。本路径保留迁移入口。
 
 这里留下的其余说明、图片和合成记录是 v2.3 的公开快照，不再跟随新代码更新。
-需要完整旧包时，查看 [v2.3 历史版本](https://github.com/Daniel-24-life/AIfile/tree/v2.3/showcases/quant-agent-system)。
+需要完整旧包时，查看 [v2.3 历史版本](https://github.com/Daniel-24-life/portfolio/tree/v2.3/showcases/quant-agent-system)。
