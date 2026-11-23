@@ -6,27 +6,31 @@
 
 # Portfolio
 
-[中文](README.zh.md) · [GitHub profile](https://github.com/Daniel-24-life)
+**[Open the project gallery](https://daniel-24-life.github.io/portfolio/)** · [中文](README.zh.md) · [GitHub profile](https://github.com/Daniel-24-life)
 
 Agent engineering, web workbenches, and modeling projects. Directory release [v3.2](CHANGELOG.md).
 
-## Public projects
+Search by name or topic. Open the project's demonstration, source repository, and test run from the same card.
 
-| Project | What it does | Demo |
-| --- | --- | --- |
-| [Trade Desk Copilot](https://github.com/Daniel-24-life/trade-desk-copilot) | Track an inquiry across turns, find relevant catalog evidence, and prepare a quote for human review. | [View demo](https://github.com/Daniel-24-life/trade-desk-copilot#demo) |
-| [CosmoPilot V4.0](https://github.com/Daniel-24-life/cosmopilot-v4) | Put point-in-time evidence, editable drafts, and review decisions in one service workbench. | [View demo](https://github.com/Daniel-24-life/cosmopilot-v4#demo) |
-| [Buyer Research Agent](https://github.com/Daniel-24-life/buyer-research-agent) | Separate explicit buyer demand from tentative leads and keep verification gaps visible in a review queue. | [View demo](https://github.com/Daniel-24-life/buyer-research-agent#demo) |
-| [Logistics Workbench](https://github.com/Daniel-24-life/logistics-workbench) | Review a shipment exception, create a dispatch task, and inspect the customer-facing status in one browser workbench. | [Live demo](https://daniel-24-life.github.io/logistics-workbench/) |
-| [BTC Agent Governance](https://github.com/Daniel-24-life/btc-agent-governance) | Route research requests, check evidence declarations, and make review gates visible before a state can advance. | [Live demo](https://daniel-24-life.github.io/btc-agent-governance/) |
-| [AgentPlatform Case Study](https://github.com/Daniel-24-life/agentplatform-case-study) | Trace a bounded agent task from specification through an isolated workspace to its evidence and review gate. | [Live demo](https://daniel-24-life.github.io/agentplatform-case-study/) |
-| [Production Workflow Mindmap](https://github.com/Daniel-24-life/production-workflow-mindmap) | Map the inputs, checks, and handoffs that move a short film from brief to delivery. | [Live demo](https://daniel-24-life.github.io/production-workflow-mindmap/) |
-| [Localization Integrity Lab](https://github.com/Daniel-24-life/localization-integrity-lab) | Compare positioning error, filter assumptions, and first-exit behavior under specified robot motion and noise models. | [View demo](https://github.com/Daniel-24-life/localization-integrity-lab#demo) |
-| [Sports Franchise Optimization](https://github.com/Daniel-24-life/sports-franchise-optimization) | Find the best feasible roster for a given budget, role mix, and risk limit. | [View demo](https://github.com/Daniel-24-life/sports-franchise-optimization#demo) |
-| [Fishery Dynamics Model](https://github.com/Daniel-24-life/fishery-dynamics-model) | Compare how harvest effort and profit targets affect a modeled fish population. | [View demo](https://github.com/Daniel-24-life/fishery-dynamics-model#demo) |
-| [GitHub profile](https://github.com/Daniel-24-life) | Featured work and engineering principles. | [Profile](https://github.com/Daniel-24-life) |
+## Public project shortcuts
 
-The directory below includes research notes, source references, and project evidence.
+<!-- gallery:start -->
+
+- **[Trade Desk Copilot](https://github.com/Daniel-24-life/trade-desk-copilot)** · [Demo recording](https://github.com/Daniel-24-life/trade-desk-copilot#demo)
+- **[CosmoPilot V4.0](https://github.com/Daniel-24-life/cosmopilot-v4)** · [Demo recording](https://github.com/Daniel-24-life/cosmopilot-v4#demo)
+- **[Buyer Research Agent](https://github.com/Daniel-24-life/buyer-research-agent)** · [Demo recording](https://github.com/Daniel-24-life/buyer-research-agent#demo)
+- **[Logistics Workbench](https://github.com/Daniel-24-life/logistics-workbench)** · [Live demo](https://daniel-24-life.github.io/logistics-workbench/)
+- **[BTC Agent Governance](https://github.com/Daniel-24-life/btc-agent-governance)** · [Live demo](https://daniel-24-life.github.io/btc-agent-governance/)
+- **[AgentPlatform Case Study](https://github.com/Daniel-24-life/agentplatform-case-study)** · [Live case study](https://daniel-24-life.github.io/agentplatform-case-study/)
+- **[Production Workflow Mindmap](https://github.com/Daniel-24-life/production-workflow-mindmap)** · [Live demo](https://daniel-24-life.github.io/production-workflow-mindmap/)
+- **[Localization Integrity Lab](https://github.com/Daniel-24-life/localization-integrity-lab)** · [Result chart](https://github.com/Daniel-24-life/localization-integrity-lab#demo)
+- **[Sports Franchise Optimization](https://github.com/Daniel-24-life/sports-franchise-optimization)** · [Result chart](https://github.com/Daniel-24-life/sports-franchise-optimization#demo)
+- **[Fishery Dynamics Model](https://github.com/Daniel-24-life/fishery-dynamics-model)** · [Result chart](https://github.com/Daniel-24-life/fishery-dynamics-model#demo)
+
+<!-- gallery:end -->
+
+<details>
+<summary>Research notes, reference packages, and release notes</summary>
 
 <!-- portfolio:start -->
 
@@ -86,6 +90,8 @@ The directory below includes research notes, source references, and project evid
 
 <!-- portfolio:end -->
 
+</details>
+
 ## Verification and boundaries
 
 Python 3.11+:
@@ -103,3 +109,12 @@ See the [registry](catalog/projects.json), [code shelf](shelves/code/),
 [design notes](docs/DESIGN_NOTES.md) and [publication guide](docs/ADD_PROJECT.md).
 Credentials, real contacts, transactions, private materials and production
 execution chains are excluded. AgentPlatform remains a discontinued case study.
+
+## Preview the gallery locally
+
+Run the following commands and open the gallery at `http://127.0.0.1:8000/gallery/`.
+
+```sh
+python scripts/build_gallery.py
+python -m http.server 8000 --bind 127.0.0.1 --directory build
+```

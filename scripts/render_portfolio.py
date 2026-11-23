@@ -12,6 +12,7 @@ from html import escape
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN = '<!-- portfolio:start -->'
 END = '<!-- portfolio:end -->'
+SHORTCUTS = ('<!-- gallery:start -->', '<!-- gallery:end -->')
 
 
 def load_registry(root: Path) -> dict:
@@ -117,21 +118,43 @@ def render(data: dict, english=False, profile=False, source_ref='main') -> str:
     return '\n'.join(chunks).rstrip() + '\n'
 
 
-def replace_region(original: str, generated: str) -> str:
-    if original.count(BEGIN) != 1 or original.count(END) != 1 or original.index(BEGIN) > original.index(END):
-        raise ValueError('exactly one ordered portfolio marker pair required')
-    before, rest = original.split(BEGIN)
-    _, after = rest.split(END)
-    return before + BEGIN + '\n\n' + generated + '\n' + END + after
+def render_shortcuts(data: dict, english: bool) -> str:
+    actions = {
+        "live": ("Live demo", "在线演示"),
+        "case": ("Live case study", "在线复盘"),
+        "recording": ("Demo recording", "录屏演示"),
+        "chart": ("Result chart", "结果图"),
+    }
+    projects = sorted(
+        (project for project in data["projects"] if project.get("published", True) and project.get("gallery")),
+        key=lambda project: project["gallery"]["order"],
+    )
+    lines = []
+    for project in projects:
+        gallery = project["gallery"]
+        name = gallery["title_en" if english else "title"]
+        label = actions[gallery["kind"]][0 if english else 1]
+        lines.append(f'- **[{name}]({project["repository"]})** · [{label}]({gallery["demo"]})')
+    return "\n".join(lines) + "\n"
 
 
-def update(path: Path, generated: str, check: bool):
+def replace_region(original: str, generated: str, markers=(BEGIN, END)) -> str:
+    begin, end = markers
+    if original.count(begin) != 1 or original.count(end) != 1 or original.index(begin) > original.index(end):
+        raise ValueError('exactly one ordered marker pair required')
+    before, rest = original.split(begin)
+    _, after = rest.split(end)
+    return before + begin + '\n\n' + generated + '\n' + end + after
+
+
+def update(path: Path, generated: str, check: bool, markers=(BEGIN, END)):
     original = path.read_text(encoding='utf-8')
-    expected = replace_region(original, generated)
-    if check and original != expected:
+    expected = replace_region(original, generated, markers)
+    if original == expected:
+        return
+    if check:
         raise ValueError(f'generated region drift: {path.name}')
-    if not check:
-        path.write_text(expected, encoding='utf-8')
+    path.write_text(expected, encoding='utf-8', newline='\n')
 
 
 def inventory(data, prefix='', code=False):
@@ -171,6 +194,7 @@ def main():
     else:
         for english, name in ((False, 'README.zh.md'), (True, 'README.md')):
             update(ROOT / name, render(data, english), args.check)
+            update(ROOT / name, render_shortcuts(data, english), args.check, SHORTCUTS)
         for name, prefix, code in [('catalog/inventory.md', '../', False), ('showcases/README.md', '../', False), ('shelves/code/README.md', '../../', True)]:
             update(ROOT / name, inventory(data, prefix, code), args.check)
     print('Portfolio registry and generated regions: PASS')

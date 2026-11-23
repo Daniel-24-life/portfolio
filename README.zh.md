@@ -6,27 +6,31 @@
 
 # 作品目录
 
-[English](README.md) · [个人主页](https://github.com/Daniel-24-life)
+**[打开作品画廊](https://daniel-24-life.github.io/portfolio/zh/)** · [English](README.md) · [GitHub 主页](https://github.com/Daniel-24-life)
 
 公开的 Agent 工程、Web 工作台和建模项目。目录版本见 [v3.2](CHANGELOG.md)。
 
-## 公开项目
+按关键词或类别查找作品。画廊提供真实界面截图、演示入口和对应的测试记录。
 
-| 项目 | 实现 | 演示 |
-| --- | --- | --- |
-| [外贸询盘工作台](https://github.com/Daniel-24-life/trade-desk-copilot) | 把分散在多轮对话中的需求整理成可检查的回复草稿与报价卡。 | [查看演示](https://github.com/Daniel-24-life/trade-desk-copilot#demo) |
-| [CosmoPilot 消费者服务台](https://github.com/Daniel-24-life/cosmopilot-v4) | 在同一个客服工作台查看当时可见的证据、编辑草稿和登记复核决定。 | [查看演示](https://github.com/Daniel-24-life/cosmopilot-v4#demo) |
-| [买家研究工作台](https://github.com/Daniel-24-life/buyer-research-agent) | 区分明确需求、采购机会与待核验线索，在队列中保留原文和验证缺口。 | [查看演示](https://github.com/Daniel-24-life/buyer-research-agent#demo) |
-| [航序物流协同工作台](https://github.com/Daniel-24-life/logistics-workbench) | 把物流异常、人工审核和调度任务放进同一工作台。 | [在线演示](https://daniel-24-life.github.io/logistics-workbench/) |
-| [BTC 研究 Agent 治理](https://github.com/Daniel-24-life/btc-agent-governance) | 用任务路由、证据判断和晋级门禁约束研究请求。 | [在线演示](https://daniel-24-life.github.io/btc-agent-governance/) |
-| [AgentPlatform 工程复盘](https://github.com/Daniel-24-life/agentplatform-case-study) | 复盘任务如何经过规格、工作区隔离、证据归集和验收。 | [在线演示](https://daniel-24-life.github.io/agentplatform-case-study/) |
-| [制作流程图谱](https://github.com/Daniel-24-life/production-workflow-mindmap) | 把短片制作的输入、检查点和交接物排在同一张图上。 | [在线演示](https://daniel-24-life.github.io/production-workflow-mindmap/) |
-| [移动机器人定位完整性研究](https://github.com/Daniel-24-life/localization-integrity-lab) | 在给定运动模型和噪声条件下，比较定位误差、滤波假设与首次越界。 | [查看演示](https://github.com/Daniel-24-life/localization-integrity-lab#demo) |
-| [球队阵容优化](https://github.com/Daniel-24-life/sports-franchise-optimization) | 在预算、位置覆盖和风险限制下，选出贡献最高的可行阵容。 | [查看演示](https://github.com/Daniel-24-life/sports-franchise-optimization#demo) |
-| [渔业动力学模型](https://github.com/Daniel-24-life/fishery-dynamics-model) | 比较捕捞强度和利润目标如何改变模型中的种群变化。 | [查看演示](https://github.com/Daniel-24-life/fishery-dynamics-model#demo) |
-| [个人主页](https://github.com/Daniel-24-life) | 核心项目与工程原则。 | [主页](https://github.com/Daniel-24-life) |
+## 公开项目快捷入口
 
-下方目录还收录研究笔记、代码参考与项目证据。
+<!-- gallery:start -->
+
+- **[外贸询盘工作台](https://github.com/Daniel-24-life/trade-desk-copilot)** · [录屏演示](https://github.com/Daniel-24-life/trade-desk-copilot#demo)
+- **[CosmoPilot 消费者服务台](https://github.com/Daniel-24-life/cosmopilot-v4)** · [录屏演示](https://github.com/Daniel-24-life/cosmopilot-v4#demo)
+- **[买家研究工作台](https://github.com/Daniel-24-life/buyer-research-agent)** · [录屏演示](https://github.com/Daniel-24-life/buyer-research-agent#demo)
+- **[航序物流协同工作台](https://github.com/Daniel-24-life/logistics-workbench)** · [在线演示](https://daniel-24-life.github.io/logistics-workbench/)
+- **[BTC 研究 Agent 治理](https://github.com/Daniel-24-life/btc-agent-governance)** · [在线演示](https://daniel-24-life.github.io/btc-agent-governance/)
+- **[AgentPlatform 工程复盘](https://github.com/Daniel-24-life/agentplatform-case-study)** · [在线复盘](https://daniel-24-life.github.io/agentplatform-case-study/)
+- **[制作流程图谱](https://github.com/Daniel-24-life/production-workflow-mindmap)** · [在线演示](https://daniel-24-life.github.io/production-workflow-mindmap/)
+- **[移动机器人定位完整性研究](https://github.com/Daniel-24-life/localization-integrity-lab)** · [结果图](https://github.com/Daniel-24-life/localization-integrity-lab#demo)
+- **[球队阵容优化](https://github.com/Daniel-24-life/sports-franchise-optimization)** · [结果图](https://github.com/Daniel-24-life/sports-franchise-optimization#demo)
+- **[渔业动力学模型](https://github.com/Daniel-24-life/fishery-dynamics-model)** · [结果图](https://github.com/Daniel-24-life/fishery-dynamics-model#demo)
+
+<!-- gallery:end -->
+
+<details>
+<summary>研究笔记、代码参考与更新记录</summary>
 
 <!-- portfolio:start -->
 
@@ -86,6 +90,8 @@
 
 <!-- portfolio:end -->
 
+</details>
+
 ## 阅读与验证
 
 先选一个业务问题，查看项目入口，再按兴趣进入架构、源码与证据。部分深度文档
@@ -105,3 +111,12 @@ python scripts/verify_public_packages.py
 
 公开的是系统结构、重建案例、样例与可独立阅读的代码。真实联系人、凭据、订单、
 私人材料与完整生产执行链保持私有。这里不把模拟结果描述成真实业务效果。
+
+## 本地预览画廊
+
+运行以下命令，然后打开 本地地址 `http://127.0.0.1:8000/gallery/`。
+
+```sh
+python scripts/build_gallery.py
+python -m http.server 8000 --bind 127.0.0.1 --directory build
+```
